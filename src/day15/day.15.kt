@@ -1,6 +1,7 @@
 package day15
 
 import readInputForDay
+import kotlin.system.measureTimeMillis
 
 fun getNumberSpoken(input: List<Int>, numOfTurns: Int): Int {
     val gameMap = input.mapIndexed { index, s ->
@@ -33,5 +34,11 @@ fun main() {
     val input = readInputForDay(15).split(',').map { it.toInt() }
 
     println("Part 1: ${getNumberSpoken(input, 2020)}")
-    println("Part 2: ${getNumberSpoken(input, 30000000)}")
+    val time = measureTimeMillis {
+        val res = getNumberSpoken(input, 30000000)
+        println("Part 2: ${res}")
+    }
+
+    println("took $time")
+
 }
