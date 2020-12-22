@@ -59,6 +59,8 @@ fun main() {
     val precedence1: (Char) -> Int = { if (it == '+' || it == '*') 1 else 0 }
     val precedence2: (Char) -> Int = { if (it == '+') 2 else if (it == '*') 1 else 0 }
 
+
+
     val inputPostfix1 = input.map { toPostfix(it, precedence1) }
     val inputPostfix2 = input.map { toPostfix(it, precedence2) }
 
